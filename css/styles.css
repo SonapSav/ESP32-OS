@@ -1,0 +1,50 @@
+.navbar {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+#os-desktop {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+.os-button {
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.os-icons {
+    font-size: 2rem;
+}
+
+.os-icons-desc {
+    width: 60px;
+    text-align: center;
+    background-color: rgba(255,255,255, 0);
+    color: #000;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+@media screen and (max-width: 576px) {
+    #os-desktop {
+        margin-top: 55px;
+        margin-bottom: 55px;
+    }
+
+    .os-button {
+        margin-left: 7px;
+    }
+
+    .os-icons {
+        width: 70px;
+        font-size: 1rem;
+    }
+
+    .os-icons-desc {
+        width: 55px;
+        margin-bottom: 0px;
+        font-size: 0.5rem;
+    }
+}
