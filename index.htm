@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ESP32 OS</title>
+    <link rel="icon" type="image/png" href="./images/esp32-os-icon.png">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
@@ -37,7 +38,7 @@
                 <div class="col-1 os-icon-wrapper">
                     <!-- Desktop icons -->
                      <!-- Home -->
-                     <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Go to the home directory"><i class="bi bi-house os-icons"></i></button>
+                     <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="modal" data-bs-target="#homeModal" title="Go to the home directory"><i class="bi bi-house os-icons"></i></button>
                      <div class="badge text-wrap os-icons-desc">
                          Home
                      </div>
@@ -46,10 +47,10 @@
                     <div class="badge text-wrap os-icons-desc">
                         Recycle
                     </div>
-                    <!-- Explorer -->
+                    <!-- Filesystem -->
                     <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Explore all the directories"><i class="bi bi-sd-card os-icons"></i></button>
                     <div class="badge text-wrap os-icons-desc">
-                        Explore
+                        File sys
                     </div>
                     <!-- Terminal -->
                     <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the terminal"><i class="bi bi-terminal os-icons"></i></button>
@@ -64,6 +65,23 @@
                 </div>
                 <div class="col-11">
 
+                </div>
+                <!-- Modals -->
+                <div class="modal fade" id="homeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title" id="homeModalLabel">Modal title</p>
+                                <button type="button" class="btn btn-sm btn-outline-dark shadow" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x"></i></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
