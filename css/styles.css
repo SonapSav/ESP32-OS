@@ -31,6 +31,7 @@ html body {
     margin-bottom: 15px;
 }
 
+
 #clmn-1 {
     border-style: dashed;
     border-width: 2px;
@@ -61,7 +62,7 @@ html body {
     }
 
     .os-icons-desc {
-        width: 50px;
+        width: 40px;
         margin-bottom: 10px;
         font-size: 0.5rem;
     }

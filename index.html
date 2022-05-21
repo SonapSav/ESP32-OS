@@ -213,52 +213,50 @@
                 mouseX = e.pageX;
                 mouseY = e.pageY;
             });
-            /*
-        // Window sizes (Dev)
-        var winWidth = 0;
-        var winHeight = 0;
-        $(window).ready(function() {
-            winWidth = $(window).width();
-            winHeight = $(window).height();
-            // Adjust the height of the columns
-            $("#clmn-1").height(winHeight-105);
-            $("#clmn-2").height(winHeight-105);
-            // 
-            ltWidth = $("#clmn-1").width();
-            rtWidth = $("#clmn-2").width();
-            ltHeight = $("#clmn-1").height();
-            rtHeight = $("#clmn-2").height();
-            spHeight = winHeight - ltHeight;
-            //
-            $("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
-        });
-        $(window).resize(function() {
-            winWidth = $(window).width();
-            winHeight = $(window).height();
-            // Adjust the height of the columns
-            $("#clmn-1").height(winHeight-105);
-            $("#clmn-2").height(winHeight-105);
-            // 
-            ltWidth = $("#clmn-1").width();
-            rtWidth = $("#clmn-2").width();
-            ltHeight = $("#clmn-1").height();
-            rtHeight = $("#clmn-2").height();
-            spHeight = winHeight - ltHeight;
-            //
-            $("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
-        });
-        // Mouse position (Dev)
-        $(document).ready(e => {
-            mouseX = e.pageX; 
-            mouseY = e.pageY;
-            $("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
-        })
-        $(document).mousemove(e => {
-            mouseX = e.pageX; 
-            mouseY = e.pageY;
-            $("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
-        });
-        */
+            // Window sizes (Dev)
+            var winWidth = 0;
+            var winHeight = 0;
+            $(window).ready(function() {
+                winWidth = $(window).width();
+                winHeight = $(window).height();
+                // Adjust the height of the columns
+                $("#clmn-1").height(winHeight-105);
+                $("#clmn-2").height(winHeight-105);
+                // 
+                ltWidth = $("#clmn-1").width();
+                rtWidth = $("#clmn-2").width();
+                ltHeight = $("#clmn-1").height();
+                rtHeight = $("#clmn-2").height();
+                spHeight = winHeight - ltHeight;
+                //
+               // $("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
+            });
+            $(window).resize(function() {
+                winWidth = $(window).width();
+                winHeight = $(window).height();
+                // Adjust the height of the columns
+                $("#clmn-1").height(winHeight-105);
+                $("#clmn-2").height(winHeight-105);
+                // 
+                ltWidth = $("#clmn-1").width();
+                rtWidth = $("#clmn-2").width();
+                ltHeight = $("#clmn-1").height();
+                rtHeight = $("#clmn-2").height();
+                spHeight = winHeight - ltHeight;
+                //
+                //$("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
+            });
+            // Mouse position (Dev)
+            $(document).ready(e => {
+                mouseX = e.pageX; 
+                mouseY = e.pageY;
+                //$("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
+            })
+            $(document).mousemove(e => {
+                mouseX = e.pageX; 
+                mouseY = e.pageY;
+                //$("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
+            });
             // Desktop menu replace default right click function and show custom menu
             $("#clmn-2").on("contextmenu", e => {
                 winWidth = $(window).width();
@@ -301,14 +299,20 @@
                 }
                 // Position of desktop-menu middle and left 
                 else if (mouseX >= winWidth - rtWidth - 2 * desktopMenuBufferHor && mouseY > 2 * desktopMenuHeight && mouseY < winHeight - 2 * desktopMenuHeight) {
-                    $("#desktop-menu").offset({"top": mouseY, "left": mouseX})
+                    $("#desktop-menu").offset({
+                        "top": mouseY, 
+                        "left": mouseX
+                    })
                 }
                 // Anywhere else 
                 else {
-                    $("#desktop-menu").offset({"top": mouseY, "left": mouseX})
+                    $("#desktop-menu").offset({
+                        "top": mouseY, 
+                        "left": mouseX
+                    })
                 }
             });
-            // Desktop menu hide whatever click occurs
+            // Desktop menu hide whatever kind of click occurs
             $(document).bind("mousedown", e => {
                 $("#desktop-menu").hide(100)
             });
