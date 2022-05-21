@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ESP32 OS</title>
+        <link
+        rel="icon" type="image/png" href="./images/esp32-os-icon.png">
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+    <body>
+        <header>
+            <!-- Top navbar-->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="container-fluid" id="os-desktop">
+                <div class="row mb-5 text-center">
+                    <div class="col-2 col-lg-1 os-icon-wrapper" id="clmn-1">
+                        <!-- Desktop icons -->
+                        <!-- Home -->
+                            <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="modal" data-bs-target="#homeModal" title="Go to the home directory"> <i class="bi bi-house os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Home
+                        </div>
+                        <div class="w-100"></div>
+                        <!-- Recycle bin -->
+                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Check the contents of the recycle bin">
+                            <i class="bi bi-trash os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Recycle
+                        </div>
+                        <div class="w-100"></div>
+                        <!-- Datasystem -->
+                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Explore the filesystem">
+                            <i class="bi bi-sd-card os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Data
+                        </div>
+                        <div class="w-100"></div>
+                        <!-- Terminal -->
+                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the terminal">
+                            <i class="bi bi-terminal os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Term
+                        </div>
+                        <div class="w-100"></div>
+                        <!-- Code editor -->
+                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the code editor">
+                            <i class="bi bi-code-slash os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Editor
+                        </div>
+                        <div class="w-100"></div>
+                        <!---->
+                        <!-- Calculator -->
+                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the code editor">
+                            <i class="bi bi-calculator os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Calc
+                        </div>
+                        <div class="w-100"></div>
+                    </div>
+                    <!-- Whitespace -->
+                    <div
+                        class="col-10 col-lg-11" id="clmn-2">
+                        <!--
+                                            <div id="infoTable" style="width: 500px; margin: auto">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">Breakpoint</th>
+                                                            <th scope="col">Class infix</th>
+                                                            <th scope="col">Dimensions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">X-Small</th>
+                                                            <td>None</td>
+                                                            <td>&lt;576px</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row">Small</th>
+                                                            <td>sm</td>
+                                                            <td>576px</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row">Medium</th>
+                                                            <td>md</td>
+                                                            <td>768</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row">Large</th>
+                                                            <td>lg</td>
+                                                            <td>992px</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row">Extra large</th>
+                                                            <td>xl</td>
+                                                            <td>1200px</td>
+                                                      </tr>
+                                                      <tr>
+                                                            <th scope="row">Extra extra large</th>
+                                                            <td>xxl</td>
+                                                            <td>1400</td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                            </div>
+                                            -->
+                        <div id="logs">
+                            <div id="log"></div>
+                            <div id="log2"></div>
+                        </div>
+                    </div>
+                    <!-- Modals -->
+                    <div class="modal fade" id="homeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <p class="modal-title" id="homeModalLabel">Modal title</p>
+                                    <button type="button" class="btn btn-sm btn-outline-dark shadow" data-bs-dismiss="modal" aria-label="Close">
+                                        <i class="bi bi-x"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    ...
+                                </div>
+                                <div class="modal-footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Desktop menu -->
+                    <div class="all-menus" id="desktop-menu">
+                        <ul>
+                            <li><a href="#"><i></i>View</a></li>
+                            <li><a href="#"><i></i>Share</a></li>
+                            <li><a href="#"><i></i>Delete</a></li>
+                            <li><a href="#"><i></i>Move</a></li>
+                            <li><a href="#"><i></i>Copy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom navbar-->
+            <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">ESP32-OS</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottomNavbarCollapse" aria-controls="bottomNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="bottomNavbarCollapse">
+                        <ul class="navbar-nav mb-2 mb-md-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </main>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <!-- JavaSript Add-ons-->
+        <script>
+            // Tooltip
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl)
+            });
+            // Mouse tracker
+            var mouseX;
+            var mouseY;
+            $(document).mousemove(e => {
+                mouseX = e.pageX;
+                mouseY = e.pageY;
+            });
+            /*
+        // Window sizes (Dev)
+        var winWidth = 0;
+        var winHeight = 0;
+        $(window).ready(function() {
+            winWidth = $(window).width();
+            winHeight = $(window).height();
+            // Adjust the height of the columns
+            $("#clmn-1").height(winHeight-105);
+            $("#clmn-2").height(winHeight-105);
+            // 
+            ltWidth = $("#clmn-1").width();
+            rtWidth = $("#clmn-2").width();
+            ltHeight = $("#clmn-1").height();
+            rtHeight = $("#clmn-2").height();
+            spHeight = winHeight - ltHeight;
+            //
+            $("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
+        });
+        $(window).resize(function() {
+            winWidth = $(window).width();
+            winHeight = $(window).height();
+            // Adjust the height of the columns
+            $("#clmn-1").height(winHeight-105);
+            $("#clmn-2").height(winHeight-105);
+            // 
+            ltWidth = $("#clmn-1").width();
+            rtWidth = $("#clmn-2").width();
+            ltHeight = $("#clmn-1").height();
+            rtHeight = $("#clmn-2").height();
+            spHeight = winHeight - ltHeight;
+            //
+            $("#log").html("Total W: " + winWidth + "px<br/>Left W: " + ltWidth + "px<br/>Right W: " + rtWidth + "px<br/><br/>Total H: " + winHeight + "px<br/>Left H: " + ltHeight + "px<br/>Right H: " + rtHeight + "px<br/>Spare H: " + spHeight + "px<br/><br/>")
+        });
+        // Mouse position (Dev)
+        $(document).ready(e => {
+            mouseX = e.pageX; 
+            mouseY = e.pageY;
+            $("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
+        })
+        $(document).mousemove(e => {
+            mouseX = e.pageX; 
+            mouseY = e.pageY;
+            $("#log2").html("Mouse X: " + mouseX + "<br/>Mouse Y: " + mouseY + "<br/>")
+        });
+        */
+            // Desktop menu replace default right click function and show custom menu
+            $("#clmn-2").on("contextmenu", e => {
+                winWidth = $(window).width();
+                winHeight = $(window).height();
+                rtWidth = $("#clmn-2").width();
+                rtHeight = $("#clmn-2").height();
+                e.preventDefault();
+                $("#desktop-menu").show();
+                // Margins to prevent overflow of menu
+                desktopMenuWidth = $("#desktop-menu").width();
+                desktopMenuHeight = $("#desktop-menu").height();
+                desktopMenuBufferHor = 25;
+                // Position of desktop-menu top and right
+                if (mouseX > winWidth - 2 * desktopMenuWidth && mouseY < 2 * desktopMenuHeight) {
+                    $("#desktop-menu").offset({
+                        "top": mouseY,
+                        "left": mouseX - desktopMenuWidth - desktopMenuBufferHor
+                    })
+                }
+                // Position of desktop-menu middle and right 
+                else if (mouseX > winWidth - 2 * desktopMenuWidth && mouseY >= desktopMenuHeight && mouseY <= winHeight - 2 * desktopMenuHeight) {
+                    $("#desktop-menu").offset({
+                        "top": mouseY,
+                        "left": mouseX - desktopMenuWidth - desktopMenuBufferHor
+                    })
+                }
+                // Position of desktop-menu bottom and right 
+                else if (mouseX > winWidth - 2 * desktopMenuWidth && mouseY > winHeight - 2 * desktopMenuHeight) {
+                    $("#desktop-menu").offset({
+                        "top": mouseY - desktopMenuHeight,
+                        "left": mouseX - desktopMenuWidth - desktopMenuBufferHor
+                    })
+                }
+                // Position of desktop-menu bottom and center and left 
+                else if (mouseX >= winWidth - rtWidth - 2 * desktopMenuBufferHor && mouseX <= winWidth - 2 * desktopMenuWidth && mouseY > winHeight - 2 * desktopMenuHeight) {
+                    $("#desktop-menu").offset({
+                        "top": mouseY - desktopMenuHeight,
+                        "left": mouseX
+                    })
+                }
+                // Position of desktop-menu middle and left 
+                else if (mouseX >= winWidth - rtWidth - 2 * desktopMenuBufferHor && mouseY > 2 * desktopMenuHeight && mouseY < winHeight - 2 * desktopMenuHeight) {
+                    $("#desktop-menu").offset({"top": mouseY, "left": mouseX})
+                }
+                // Anywhere else 
+                else {
+                    $("#desktop-menu").offset({"top": mouseY, "left": mouseX})
+                }
+            });
+            // Desktop menu hide whatever click occurs
+            $(document).bind("mousedown", e => {
+                $("#desktop-menu").hide(100)
+            });
+        </script>
+    </body>
+</html>
