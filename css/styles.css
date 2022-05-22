@@ -1,5 +1,6 @@
 html body {
     overflow: hidden;
+    background-color: #494949;
 }
 
 .navbar {
@@ -7,15 +8,77 @@ html body {
     padding-bottom: 5px !important;
 }
 
+/* change the background color */
+.navbar-custom {
+    background-color: #212529;
+}
+
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: #e1e7e4;
+}
+
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: #e1e7e4;
+}
+
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: lightgrey;
+}
+
+/* for dropdowns only */
+.navbar-custom .navbar-nav .dropdown-menu {
+    background-color: lightgrey;
+}
+
+/* dropdown item text color */
+.navbar-custom .navbar-nav .dropdown-item {
+    color: #212529;
+}
+
+/* dropdown item hover or focus */
+.navbar-custom .navbar-nav .dropdown-item:hover,
+.navbar-custom .navbar-nav .dropdown-item:focus {
+    color: #e1e7e4;
+    background-color: lightgrey;
+}
+
+.bottom-bar-custom {
+    height: 50px;
+    background-color: #212529;
+}
+
 #os-desktop {
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-
 .os-button {
     margin-top: 5px;
     margin-bottom: 0px;
+}
+
+.btn-default {
+    background-color: #212529;
+    color:#e1e7e4;
+    border-color: #e1e7e4;
+}
+
+.btn-default:hover {
+    background-color: #e1e7e4;
+    color:#212529;
+    border-color: #212529;
+}
+
+.btn-default:focus, .btn-default:active {
+    background-color: #212529;
+    color:#e1e7e4;
+    border-color: #e1e7e4;
 }
 
 .os-icons {
@@ -26,12 +89,16 @@ html body {
     width: 60px;
     text-align: center;
     background-color: rgba(255,255,255, 0);
-    color: #000;
+    color: #e1e7e4;
     margin-top: 0px;
     margin-bottom: 15px;
 }
 
+#clmn-1, #clmn-2 {
+    padding-top: 5px;
+}
 
+/*
 #clmn-1 {
     border-style: dashed;
     border-width: 2px;
@@ -44,6 +111,7 @@ html body {
     border-width: 2px;
     border-color: black;
 }
+*/
 
 .all-menus {
     display: none; 
@@ -53,6 +121,11 @@ html body {
     border-style: solid;
     border-width: 1px;
     border-color: #000;
+}
+
+#homeWindow {
+    /*background-image: linear-gradient(to bottom, #969696 0%, #6b6b6b 100%);*/
+    background: rgb(146, 146, 146);
 }
 
 @media screen and (max-width: 768px) {

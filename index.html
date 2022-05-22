@@ -15,18 +15,35 @@
     <body>
         <header>
             <!-- Top navbar-->
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <nav class="navbar navbar-expand-md navbar-custom fixed-top">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav mb-2 mb-md-0">
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link disabled" id="weather" href="#"><i class="bi bi-cloud-slash"></i> Updating...</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">Link</a>
+                                <a class="nav-link disabled" id="desktopDate" href="#"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled" id="desktopTime" href="#"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-wifi"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="bi bi-reception-4"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link dropdown-toggle" href="#" id="powerDropDown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-power"></i></a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="powerDropDown">
+                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li><a class="dropdown-item" href="#">Reboot</a></li>
+                                    <li><a class="dropdown-item" href="#">Power off</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </div>
@@ -39,7 +56,7 @@
                     <div class="col-2 col-lg-1 os-icon-wrapper" id="clmn-1">
                         <!-- Desktop icons -->
                         <!-- Home -->
-                            <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="modal" data-bs-target="#homeModal" title="Go to the home directory"> <i class="bi bi-house os-icons"></i>
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="modal" data-bs-target="#homeModal" title="Go to the home directory"> <i class="bi bi-house os-icons"></i>
                         </button>
                         <div class="w-100"></div>
                         <div class="badge text-wrap os-icons-desc">
@@ -47,100 +64,101 @@
                         </div>
                         <div class="w-100"></div>
                         <!-- Recycle bin -->
-                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Check the contents of the recycle bin">
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Check the contents of the recycle bin">
                             <i class="bi bi-trash os-icons"></i>
                         </button>
                         <div class="w-100"></div>
                         <div class="badge text-wrap os-icons-desc">
-                            Recycle
+                            Waste
                         </div>
                         <div class="w-100"></div>
                         <!-- Datasystem -->
-                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Explore the filesystem">
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Explore the filesystem">
                             <i class="bi bi-sd-card os-icons"></i>
                         </button>
                         <div class="w-100"></div>
                         <div class="badge text-wrap os-icons-desc">
-                            Data
+                            Disk
                         </div>
                         <div class="w-100"></div>
                         <!-- Terminal -->
-                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the terminal">
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the terminal">
                             <i class="bi bi-terminal os-icons"></i>
                         </button>
                         <div class="w-100"></div>
                         <div class="badge text-wrap os-icons-desc">
-                            Term
+                            Terminal
                         </div>
                         <div class="w-100"></div>
-                        <!-- Code editor -->
-                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the code editor">
-                            <i class="bi bi-code-slash os-icons"></i>
+                        <!-- Settings -->
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the settings">
+                            <i class="bi bi-gear os-icons"></i>
                         </button>
                         <div class="w-100"></div>
                         <div class="badge text-wrap os-icons-desc">
-                            Editor
+                            Settings
+                        </div>
+                        <div class="w-100"></div>
+                        <!-- Info -->
+                        <button type="button" class="btn btn-default shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Information">
+                            <i class="bi bi-info-circle os-icons"></i>
+                        </button>
+                        <div class="w-100"></div>
+                        <div class="badge text-wrap os-icons-desc">
+                            Info
                         </div>
                         <div class="w-100"></div>
                         <!---->
-                        <!-- Calculator -->
-                        <button type="button" class="btn btn-outline-dark shadow os-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Open the code editor">
-                            <i class="bi bi-calculator os-icons"></i>
-                        </button>
-                        <div class="w-100"></div>
-                        <div class="badge text-wrap os-icons-desc">
-                            Calc
-                        </div>
-                        <div class="w-100"></div>
                     </div>
                     <!-- Whitespace -->
                     <div
                         class="col-10 col-lg-11" id="clmn-2">
+                            
                         <!--
-                                            <div id="infoTable" style="width: 500px; margin: auto">
-                                                <table class="table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th scope="col">Breakpoint</th>
-                                                            <th scope="col">Class infix</th>
-                                                            <th scope="col">Dimensions</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th scope="row">X-Small</th>
-                                                            <td>None</td>
-                                                            <td>&lt;576px</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <th scope="row">Small</th>
-                                                            <td>sm</td>
-                                                            <td>576px</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <th scope="row">Medium</th>
-                                                            <td>md</td>
-                                                            <td>768</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <th scope="row">Large</th>
-                                                            <td>lg</td>
-                                                            <td>992px</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <th scope="row">Extra large</th>
-                                                            <td>xl</td>
-                                                            <td>1200px</td>
-                                                      </tr>
-                                                      <tr>
-                                                            <th scope="row">Extra extra large</th>
-                                                            <td>xxl</td>
-                                                            <td>1400</td>
-                                                      </tr>
-                                                    </tbody>
-                                                  </table>
-                                            </div>
-                                            -->
+                        <div id="infoTable" style="width: 500px; margin: auto">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Breakpoint</th>
+                                        <th scope="col">Class infix</th>
+                                        <th scope="col">Dimensions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">X-Small</th>
+                                        <td>None</td>
+                                        <td>&lt;576px</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Small</th>
+                                        <td>sm</td>
+                                        <td>576px</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Medium</th>
+                                        <td>md</td>
+                                        <td>768</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Large</th>
+                                        <td>lg</td>
+                                        <td>992px</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Extra large</th>
+                                        <td>xl</td>
+                                        <td>1200px</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Extra extra large</th>
+                                        <td>xxl</td>
+                                        <td>1400</td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                        </div>
+                        -->
                         <div id="logs">
                             <div id="log"></div>
                             <div id="log2"></div>
@@ -149,7 +167,7 @@
                     <!-- Modals -->
                     <div class="modal fade" id="homeModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="homeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-xl modal-dialog-scrollable">
-                            <div class="modal-content">
+                            <div class="modal-content"  id="homeWindow">
                                 <div class="modal-header">
                                     <p class="modal-title" id="homeModalLabel">Modal title</p>
                                     <button type="button" class="btn btn-sm btn-outline-dark shadow" data-bs-dismiss="modal" aria-label="Close">
@@ -163,7 +181,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Desktop menu -->
+                    <!-- Desktop right-click menu -->
                     <div class="all-menus" id="desktop-menu">
                         <ul>
                             <li><a href="#"><i></i>View</a></li>
@@ -175,22 +193,11 @@
                     </div>
                 </div>
             </div>
-            <!-- Bottom navbar-->
-            <nav class="navbar navbar-expand-md navbar-dark fixed-bottom bg-dark">
+            <!-- Bottom bar-->
+            <div class="bottom-bar-custom fixed-bottom">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">ESP32-OS</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#bottomNavbarCollapse" aria-controls="bottomNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="bottomNavbarCollapse">
-                        <ul class="navbar-nav mb-2 mb-md-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                        </ul>
+                    <div id="minimizedElements">
+
                     </div>
                 </div>
             </nav>
@@ -198,14 +205,70 @@
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <!-- JQuery -->
-        <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <!-- JavaSript Add-ons-->
         <script>
+            // Desktop background
+            $(document).ready(function() {
+                $("body").css("background", "#494949");
+            })
             // Tooltip
             var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
             var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
                 return new bootstrap.Tooltip(tooltipTriggerEl)
             });
+            // Date and time
+            async function showDateTime() {
+                // Constants
+                const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                const weekdayNames = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+                const nowDateTime = new Date();
+                const date = nowDateTime.getDate().toString();
+                const month = nowDateTime.getMonth().toString(); 
+                const year = nowDateTime.getFullYear().toString();
+                const weekday = nowDateTime.getDay().toString();
+                const hrs = nowDateTime.getHours().toString();
+                const min = nowDateTime.getMinutes().toString();
+                // Variables
+                let formattedMonth = (nowDateTime.getMonth() < 10) ? "0" + month : month;
+                let formattedDay = (nowDateTime.getDate() < 10) ? "0" + date : date;
+                let formattedHours = (nowDateTime.getHours() < 10) ? "0" + hrs : hrs;
+                let formattedMinutes = (nowDateTime.getMinutes() < 10) ? "0" + min : min;
+                let resultDate = "";
+                let resultTime = "";
+                // Formatting
+                formattedMonth = formattedMonth.indexOf("0") == 0 ? formattedMonth.substring(1, 2) : formattedMonth;
+                formattedDay = formattedDay.indexOf("0") == 0 ? formattedDay.substring(1, 2) : formattedDay;
+                // Results
+                resultDate = weekdayNames[nowDateTime.getDay()] + ", " + monthNames[nowDateTime.getMonth()] + " " + formattedDay + " " + year;
+                resultTime = formattedHours + ":" + formattedMinutes;
+                $("#desktopDate").html('<i class="bi bi-calendar"></i> ' + resultDate);
+                $("#desktopTime").html('<i class="bi bi-clock"></i> ' + resultTime);
+            }
+            // Date and time initially
+            showDateTime();
+            // Date and time continuously every 1 second
+            setInterval(showDateTime, 1000);
+            // Weather
+            function showWeather() {
+                $.ajax({
+                    type: "POST",
+                    url: "https://api.weatherapi.com/v1/current.json?key=fab45e5435674c42bdb184221222205&q=Abu Dhabi&aqi=no",
+                    dataType: "json",
+                    success: function (result, status, xhr) {
+                        const currentTemperature = result.current.temp_c;
+                        const currentConditionText = result.current.condition.text;
+                        $('#weather').html('<i class="bi bi-clouds"></i> ' + currentTemperature + "&#8451; " + currentConditionText);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log("Error: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+                    }
+                });
+            }
+            // Date and time initially
+            showWeather();
+            // Date and time continuously every 15 minutes
+            setInterval(showWeather, 900000);
             // Mouse tracker
             var mouseX;
             var mouseY;
@@ -220,8 +283,8 @@
                 winWidth = $(window).width();
                 winHeight = $(window).height();
                 // Adjust the height of the columns
-                $("#clmn-1").height(winHeight-105);
-                $("#clmn-2").height(winHeight-105);
+                $("#clmn-1").height(winHeight-110);
+                $("#clmn-2").height(winHeight-110);
                 // 
                 ltWidth = $("#clmn-1").width();
                 rtWidth = $("#clmn-2").width();
@@ -235,8 +298,8 @@
                 winWidth = $(window).width();
                 winHeight = $(window).height();
                 // Adjust the height of the columns
-                $("#clmn-1").height(winHeight-105);
-                $("#clmn-2").height(winHeight-105);
+                $("#clmn-1").height(winHeight-110);
+                $("#clmn-2").height(winHeight-110);
                 // 
                 ltWidth = $("#clmn-1").width();
                 rtWidth = $("#clmn-2").width();
