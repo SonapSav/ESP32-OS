@@ -33,19 +33,19 @@ html body {
 
 /* for dropdowns only */
 .navbar-custom .navbar-nav .dropdown-menu {
-    background-color: lightgrey;
+    background-color: #212529;
 }
 
 /* dropdown item text color */
 .navbar-custom .navbar-nav .dropdown-item {
-    color: #212529;
+    color: #e1e7e4;
 }
 
 /* dropdown item hover or focus */
 .navbar-custom .navbar-nav .dropdown-item:hover,
 .navbar-custom .navbar-nav .dropdown-item:focus {
-    color: #e1e7e4;
-    background-color: lightgrey;
+    color: #212529;
+    background-color: #e1e7e4;
 }
 
 .bottom-bar-custom {
@@ -116,11 +116,38 @@ html body {
 .all-menus {
     display: none; 
     position: absolute;
+    margin: 0;
+    padding: 0;
     z-index: 99;
     width: 200px;
     border-style: solid;
+    border-radius: 5px;
     border-width: 1px;
-    border-color: #000;
+    border-color: #212529;
+    background-color: #212529;
+}
+
+ul.desktop-menu {
+    list-style-type: none;
+    margin: 10px 0px;
+    padding: 0;
+}
+
+.desktop-menu li {
+    text-align: left;
+    margin: 2px 0px;
+}
+
+.desktop-menu li a {
+    display: block;
+    padding: 2px 15px;
+    text-decoration: none;
+    color: #e1e7e4;
+}
+
+.desktop-menu li a:hover {
+    color: #212529;
+    background-color: #e1e7e4;
 }
 
 #homeWindow {
