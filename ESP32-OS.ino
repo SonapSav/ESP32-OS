@@ -41,30 +41,26 @@
 
 #define FORMAT_LITTLEFS_IF_FAILED false
 
-// Http authentication
-const char* http_username = "admin";
-const char* http_password = "admin";
+// Http authentication (EXAMPLE)
+const char* http_username = "admin"; // SET_USERNAME_FOR_AUTHENTICATION
+const char* http_password = "admin"; // SET_PASSWORD_FOR_AUTHENTICATION
 
-// Wifi network credentials
-const char* ssid = "VasilopoulosWiFi-Ext";
-const char* password = "geBt3chermis69";
-//const char* ssid = "VasilopoulosWiFi_FF_2.4GHz";
-//const char* password = "geBt3chermis69";
-//const char* ssid = "PVHS";
-//const char* password = "geBt3chermis69!";
+// Wifi network credentials (EXAMPLE)
+const char* ssid = "myssid"; // SET_YOUR_WIFI_SSID
+const char* password = "mypassword"; //SET_YOUR_WIFI_PASSWORD
 
-// Set static IP address
-IPAddress local_IP(192, 168, 0, 222);
+// Set static IP address (EXAMPLE)
+IPAddress local_IP(192, 168, 0, 222); // SET_IP_ADDRESS
 
-// Set gateway IP address
-IPAddress gateway(192, 168, 0, 1);
-IPAddress subnet(255, 255, 255, 0);
-IPAddress primaryDNS(8, 8, 8, 8);
-IPAddress secondaryDNS(8, 8, 4, 4);
+// Set gateway IP address (EXAMPLE)
+IPAddress gateway(192, 168, 0, 1); // SET_GATEWAY_IP
+IPAddress subnet(255, 255, 255, 0); // SET_SUBNET_MASK
+IPAddress primaryDNS(8, 8, 8, 8); // SET_PRIMARY_DNS
+IPAddress secondaryDNS(8, 8, 4, 4); // SET_SECONDARY_DNS
 
-// Webserver port and domain name
-const int webserverPort = 80;
-const char* domainName = "esp32os";
+// Webserver port and domain name (EXAMPLE)
+const int webserverPort = 80; // SET_WEBSERVER_PORT
+const char* domainName = "esp32os"; // SET_DESIRED_DNS
 AsyncWebServer server(webserverPort);
 
 // Check WiFi connection (Interval)
@@ -72,8 +68,8 @@ unsigned long previousMillis = 0;
 unsigned long interval = 30000; // 30sec
 
 // NTP offset settings
-const long gmtOffset_sec = 14400; // 3600 x hrs
-const int daylightOffset_sec = 0;
+const long gmtOffset_sec = 14400; // SET_TIME_DIFFERENCE_FROM_UTC (1HR = 3600)
+const int daylightOffset_sec = 0; // SET_DAYLIGHT_SETTINGS_OF_YOUR_REGION (1HR = 3600)
 
 // Init epoch time
 unsigned long epochTime;
