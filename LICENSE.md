@@ -1,6 +1,6 @@
 MIT License
   
-Copyright (C) 2022 Panagiotis Vasilopoulos
+Copyright (C) 2022 Panagiotis Vasilopoulos.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

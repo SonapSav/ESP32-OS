@@ -3,7 +3,7 @@ $(document).ready(function () {
     const esp32IPDomain = window.location.hostname;
     const maxSizeOfFileToMoveCopy = 92160;
     //console.log("ESP32 IP/Domain name: " + esp32IPDomain);
-    //console.log("Maximum file size: " + bytesConverter(maxSizeOfFileToMoveCopy, 2, "file"));
+    //console.log("Maximum file size:  " + bytesConverter(maxSizeOfFileToMoveCopy, 2, "file"));
 
     const fileTypesArray = [
         ".jpg",
