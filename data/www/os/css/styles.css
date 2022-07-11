@@ -97,20 +97,7 @@ html body {
 #clmn-1, #clmn-2 {
     padding-top: 5px;
 }
-/*
-#clmn-1 {
-    border-style: dashed;
-    border-width: 2px;
-    border-color: red;
-}
 
-#clmn-2 {
-    border-style: dashed;
-    border-left-style: none;
-    border-width: 2px;
-    border-color: black;
-}
-*/
 .all-menus {
     display: none; 
     position: absolute;
