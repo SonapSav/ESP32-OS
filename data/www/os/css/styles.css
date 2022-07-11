@@ -97,7 +97,6 @@ html body {
 #clmn-1, #clmn-2 {
     padding-top: 5px;
 }
-
 /*
 #clmn-1 {
     border-style: dashed;
@@ -112,7 +111,6 @@ html body {
     border-color: black;
 }
 */
-
 .all-menus {
     display: none; 
     position: absolute;
@@ -150,9 +148,217 @@ ul.desktop-menu {
     background-color: #e1e7e4;
 }
 
-#homeWindow {
-    /*background-image: linear-gradient(to bottom, #969696 0%, #6b6b6b 100%);*/
-    background: rgb(146, 146, 146);
+#rebootWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    display: none;
+    text-align: center;
+    background-color:rgba(0,0,0, 0.6);
+}
+
+#rebootMessage {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: none;
+    z-index: 9999;
+    color: #e1e7e4;
+}
+
+button[role="link"] {
+    color: #e1e7e4;
+    background-color: rgba(0,0,0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button[role="link"]:hover,
+button[role="link"]:active,
+button[role="link"]:focus {
+    color: #3754ca;
+    background-color: rgba(0,0,0, 0);
+}
+
+.invisible-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-header.custom-header {
+    border-color: #212529;
+}
+
+.modal-footer.custom-footer {
+    border-color: #212529;
+}
+
+.modal-dialog{
+    overflow-y: initial !important
+}
+
+.modal-body{
+    height: 90vh;
+    overflow-y: auto;
+}
+
+#homeWindow, #sdWindow, #termWindow, #editorWindow, #statusWindow, #aboutWindow, #viewerWindow {
+    background: #000000;
+    border: #494949 solid 1px;
+}
+
+#homeModalLabel, #sdModalLabel, #termModalLabel, #editorModalLabel, #statusModalLabel, #aboutModalLabel, #viewerModalLabel {
+    color: #e1e7e4;
+}
+
+#homeModalContent, #sdModalContent, #termModalContent, #editorModalContent, #statusModalContent, #aboutModalContent, #viewerModalContent {
+    color: #e1e7e4;
+    text-align: left;
+}
+
+#homeModalPrevious, #sdModalPrevious, #termModalPrevious, #editorModalPrevious, #statusModalPrevious, #aboutModalPrevious, #viewerModalPrevious {
+    margin-left: 3px;
+}
+
+#termTextArea {
+    width: 100%;
+    height: 200px;
+    margin-left: 0px !important;
+    background-color: #000000;
+    border: none;
+    resize: none;
+    color: #e1e7e4;
+}
+
+#crs {
+    background-color: brown;
+    color: black;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+}
+
+#src {
+    background-color: whitesmoke;
+    color: black;
+    width: 100%;
+    height: 300px;
+    padding: 5px;
+}
+
+#editorGUI {
+    background-color: black;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 14px;
+    width: 100%;
+    padding: 5px;
+    word-wrap: break-word;
+	overflow-wrap: break-word;
+    white-space: pre;
+    outline: 0px solid transparent;
+}
+
+#editorGUIHeader, #editorGUIHelper, #editorGUIFooter, #editorGUIDate {
+    background-color: black;
+    color: whitesmoke;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#editorGUIHeader {
+    margin-bottom: 5px;
+}
+
+#editorGUIHelper {
+    margin-bottom: 5px;
+}
+
+#editorGUIFooter {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#editorGUIDate {
+    margin-top: 5px;
+}
+
+#homeBreadcrumbs, #sdBreadcrumbs {
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+#photoViewer {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    text-align: center;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #494949;
+}
+
+.nav-tabs .nav-link, .nav-tabs .nav-link.active, .nav-tabs .nav-link:hover {
+    border: 1px solid #494949;
+    color: gray;
+}
+
+.nav-tabs .nav-link.active {
+    color: #000000;
+    border: 1px solid #494949;
+}
+
+#statusTabContents th,  #statusTabContents td {
+    padding: 10px;
+}
+
+#aboutModalContent h5 {
+    color: #3754ca;
+}
+
+#avatar {
+    float: right;
+}
+
+/*
+#editorTextArea {
+    width: 100%;
+    min-height: 800px;
+    margin-left: 0px !important;
+    padding: 10px 10px;
+    background-color: #ffffff;
+    border: none;
+    resize: none;
+    color: #212529;
+}
+*/
+
+#toolbar-line-2 {
+    clear: both;
+}
+
+#font-format-group, #text-format-group, #text-alignment-group, #link-photo-group, #do-undo-group, #toggle-view-group {
+    margin: 10px;
+    float: left;
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+@media screen and (max-width: 1200px) {
+    #toolbar-line-2 {
+        clear: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #toolbar-line-2 {
+        clear: none;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -165,5 +371,9 @@ ul.desktop-menu {
         width: 40px;
         margin-bottom: 10px;
         font-size: 0.5rem;
+    }
+    
+    #toolbar-line-2 {
+        clear: none;
     }
 }
