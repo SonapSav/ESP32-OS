@@ -57,7 +57,9 @@ ESP32-OS supports and requires the installation of an SD card for additional sto
 6. Maximum utilization of SD_MMC available space is 3.9 GB.
 7. Supported files: jpg, png, gif, html, htm, js, css, pdf, txt.
 8. Currently, the main functions are performed via Term (Desktop > Term). The file explorers (Desktop > ESP32 and Desktop > SD) perform only exploring functions, not copy/paste/move/locate etc. For use of all supported functions of the Term hit the icon in the desktop and then type -help.
-9. This work is still in progress...
+9. Editor can edit only text-based files like html, htm, js, css, and txt.
+10. Photo viewer can project only jpg, png, and gif types.
+11. This work is still in progress
 
 ## Term supported functions
 
